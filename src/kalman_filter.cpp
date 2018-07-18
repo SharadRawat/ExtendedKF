@@ -61,7 +61,7 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   double rho_dot = (px*vx + py*vy) / rho;
   VectorXd h = VectorXd(3);
   h << rho, theta, rho_dot;
-  MatrixXd Hj = tools.CalculateJacobian(z);
+  MatrixXd Hj = H_;
   VectorXd y = z - h;
   MatrixXd Ht = Hj.transpose();
   MatrixXd S_ = Hj*P_*Ht + R_;
