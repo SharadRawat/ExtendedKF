@@ -140,8 +140,8 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
 	float dt_3 = dt_2 * dt;
 	float dt_4 = dt_3 * dt;
   
-  ekf_.F_(0,2) << dt;
-  ekf_.F_(1,3) << dt;
+  ekf_.F_(0,2) = dt;
+  ekf_.F_(1,3) = dt;
   	ekf_.Q_ = MatrixXd(4, 4);
 	ekf_.Q_ <<  dt_4/4*noise_ax, 0, dt_3/2*noise_ax, 0,
 			   0, dt_4/4*noise_ay, 0, dt_3/2*noise_ay,
