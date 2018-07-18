@@ -37,13 +37,19 @@ FusionEKF::FusionEKF() {
   Hj = tools.CalculateJacobian( ekf_.x_);
   
   //state covariance matrix P
-	kf_.P_ = MatrixXd(4, 4);
-	kf_.P_ << 1, 0, 0, 0,
+	ekf_.P_ = MatrixXd(4, 4);
+	ekf_.P_ << 1, 0, 0, 0,
 			  0, 1, 0, 0,
 			  0, 0, 1000, 0,
 			  0, 0, 0, 1000;
   
-  kf_.x_ = VectorXd(4);
+  ekf_.x_ = VectorXd(4);
+//the initial transition matrix F_
+	ekf_.F_ = MatrixXd(4, 4);
+	ekf_.F_ << 1, 0, 1, 0,
+			  0, 1, 0, 1,
+			  0, 0, 1, 0,
+			  0, 0, 0, 1;
 
 
   /**
