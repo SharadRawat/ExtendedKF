@@ -20,7 +20,7 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
     cout<< " Invalid Data or sizes of estimations and ground truth unequal" <<endl;
       return rmse;
     }
-  for (int i=0;i< estimations.size();++i){
+  for (unsigned int i=0;i< estimations.size();++i){
   	VectorXd residual = estimations[i]-ground_truth[i];
     	residual = residual.array()*residual.array();
     	rmse += residual;
