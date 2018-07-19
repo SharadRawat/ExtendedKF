@@ -34,7 +34,7 @@ FusionEKF::FusionEKF() {
   H_laser_<< 1, 0, 0, 0,
 	  0, 1, 0, 0;
   
-  Hj_ = tools.CalculateJacobian( ekf_.x_);
+  /*Hj_ = tools.CalculateJacobian( ekf_.x_);*/
   
   //state covariance matrix P
 	ekf_.P_ = MatrixXd(4, 4);
