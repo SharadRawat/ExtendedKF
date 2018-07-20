@@ -41,9 +41,9 @@ MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
 	float vx = x_state(2);
 	float vy = x_state(3);
 	float d1,d2,d3;
-	d1 = (px*px+py*py) + 1e-5;
-  	d2 = sqrt(d1) + 1e-5;
-  	d3 = d2*d1 + 1e-5;
+	d1 = (px*px+py*py) + 1e-3;
+  	d2 = sqrt(d1) ;
+  	d3 = d2*d1 ;
   /**
   TODO:
     * Calculate a Jacobian here.
