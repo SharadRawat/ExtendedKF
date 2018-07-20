@@ -59,9 +59,9 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   double rho = sqrt(px*px + py*py);
   double theta = atan2(py, px);
   double rho_dot = (px*vx + py*vy) / rho;
-  std::cout<< rho <<endl;
-  std::cout<< theta <<endl;
-  std::cout<< rho_dot <<endl;
+  cout<< rho <<endl;
+  cout<< theta <<endl;
+  cout<< rho_dot <<endl;
   
   VectorXd h = VectorXd(3);
   h << rho, theta, rho_dot;
