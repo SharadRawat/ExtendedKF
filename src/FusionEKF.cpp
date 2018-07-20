@@ -91,11 +91,11 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
       Convert radar from polar to cartesian coordinates and initialize state.
       */
       double rho = measurement_pack.raw_measurements_[0]; // range
-	    std::cout<<rho<< "hey" <<endl
+	    std::cout<<rho<< "hey" <<endl;
   	  double phi = measurement_pack.raw_measurements_[1];
 	    std::cout<<phi<< "hey" <<endl;// bearing
   	  double rho_dot = measurement_pack.raw_measurements_[2];
-	    std::cout<<rho_dot<< "hey" <<endl// velocity of rho
+	    std::cout<<rho_dot<< "hey" <<endl;// velocity of rho
   	  // Coordinates convertion from polar to cartesian
   	  double x = rho * cos(phi);
       if ( x < 0.0001 ) {
